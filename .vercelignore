@@ -1,3 +1,7 @@
 design/
 serve.sh
 README.md
+bin/
+src/
+build-css.sh
+tailwind.config.js

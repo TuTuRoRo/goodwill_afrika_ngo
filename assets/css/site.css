@@ -31,3 +31,13 @@ body.menu-open { overflow: hidden; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important; }
 }
+
+/* Mobile */
+.no-scrollbar { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+body.menu-open #whatsapp { display: none; }
+@media (max-width: 767px) {
+  [data-carousel] { scroll-padding-left: 1.25rem; }
+  #whatsapp { bottom: max(1rem, env(safe-area-inset-bottom)); }
+  .toast { bottom: calc(5rem + env(safe-area-inset-bottom)); border-radius: 1rem; text-align: center; }
+}

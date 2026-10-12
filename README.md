@@ -9,9 +9,21 @@ Page d'accueil construite à partir de la maquette Stitch (`../goodwill_afrika_a
 PORT=3000 ./serve.sh  # autre port
 ```
 
+## Modifier les styles
+
+Après toute modification des classes dans `index.html` ou `assets/js/`, régénérer la feuille de style :
+
+```sh
+./build-css.sh          # télécharge le binaire Tailwind autonome au premier lancement (pas besoin de Node)
+./build-css.sh --watch  # recompile à chaque modification
+```
+
+Puis commiter `assets/css/tailwind.css`.
+
 ## Structure
 
-- `index.html` — page d'accueil (Tailwind via CDN, configuré avec les tokens du design system)
+- `index.html` — page d'accueil, responsive (mobile d'abord)
+- `tailwind.config.js` — tokens du design system ; `assets/css/tailwind.css` est généré
 - `assets/css/site.css` — styles complémentaires (toast, modale, défilement)
 - `assets/js/main.js` — menu mobile, sélection de don, filtres publications/agenda, fiches ODD, formulaires
 - `assets/img/` — photos et logo en local
